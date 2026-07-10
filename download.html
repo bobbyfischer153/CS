@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Download ChessSpider!</title>
+    <link rel="shortcut icon" href="images/favicon.gif" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        a {
+    		display: inline-block;
+    		color: #1a73e8;
+    		font-weight: 600;
+    		text-decoration: underline;
+    		text-underline-offset: 3px;
+    		padding: 2px 0;
+    		margin: 8px 0;
+    		font-size: 16px;
+	}
+
+	a:hover {
+    		color: #0f5bd1;
+	}
+
+	@media (max-width: 480px) {
+    		a {
+        		width: 100%;
+        		text-align: center;
+        		padding: 10px 12px;
+    		}
+	}
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+
+        b {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        br {
+            line-height: 1.8;
+        }
+    </style>
+	
+	<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        // =====================================================
+        // BASE GA4 INIT
+        // =====================================================
+        gtag('js', new Date());
+
+        gtag('config', 'G-9VZK61L1DZ', {
+            send_page_view: true
+        });
+
+
+        // =====================================================
+        // OPTIONAL: CONSENT HOOK (future-proofing)
+        // =====================================================
+        function hasAnalyticsConsent() {
+            return true; // swap later for consent banner logic if needed
+        }
+
+        // =====================================================
+        // CTA TRACKING
+        // =====================================================
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('[data-cta]');
+            if (!el) return;
+
+            if (!hasAnalyticsConsent()) return;
+
+            gtag('event', 'select_content', {
+                content_type: 'cta',
+                item_id: el.dataset.cta,
+                section: el.dataset.section || 'unknown'
+            });
+        });
+
+
+        // =====================================================
+        // OUTBOUND LINK TRACKING
+        // =====================================================
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('a');
+            if (!el || !el.href) return;
+
+            try {
+                const url = new URL(el.href);
+                const isExternal = url.origin !== window.location.origin;
+
+                if (isExternal && hasAnalyticsConsent()) {
+                    gtag('event', 'click', {
+                        event_category: 'outbound',
+                        link_url: el.href
+                    });
+                }
+            } catch (err) { }
+        });
+
+
+        // =====================================================
+        // SPECIAL TRACKING: DOWNLOADS / FILES
+        // =====================================================
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('a');
+            if (!el || !el.href) return;
+
+            if (!hasAnalyticsConsent()) return;
+
+            const href = el.href.toLowerCase();
+
+            if (
+                href.includes('.exe') ||
+                href.includes('.zip') ||
+                href.includes('.pdf') ||
+                href.includes('download')
+            ) {
+                gtag('event', 'file_download', {
+					file_name: href.split('/').pop(),
+					file_url: el.href,
+					transport_type: 'beacon'
+				});
+            }
+        });
+    </script>
+</head>
+
+<body>
+	<div class="container">
+		<p>
+			<b>Thanks for downloading ChessSpider! 4.2 for Windows x64.</b>
+
+			Please click
+
+			<a href="downloads/chessspider_4.2.zip"
+			   data-cta="zip_download"
+			   data-section="download_page">
+			   Download ChessSpider
+			</a>
+
+			After extracting the files, run the ChessSpider.exe file as seen below.
+		</p>
+
+		<img src="images/runningchessspider!.png"
+			 alt="ChessSpider installation guide"
+			 title="ChessSpider!" />
+
+		<p>
+			After the 15-day trial expires, you can choose to purchase the unlimited version for €29.99. Kindly email <a href="mailto:chessbites@gmail.com">chessbites@gmail.com</a> and we'll get you set up.
+		</p>
+    </div>
+</body>
+</html>
