@@ -2,191 +2,206 @@
 <html lang="en">
 
 <head>
-    <title>Download ChessSpider!</title>
-    <link rel="shortcut icon" href="images/favicon.gif" />
+<meta charset="utf-8">
+<title>Download ChessSpider!</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="images/favicon.gif">
 
-    <style>
-        html, body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background: #fff;
-            color: #222;
-            line-height: 1.6;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 20px 16px;
-        }
+<style>
 
-        p {
-            font-size: 16px;
-        }
+html{
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+    background:#fff;
+    color:#222;
+    line-height:1.6;
+}
 
-        a {
-    		display: inline-block;
-    		color: #1a73e8;
-    		font-weight: 600;
-    		text-decoration: underline;
-    		text-underline-offset: 3px;
-    		padding: 2px 0;
-    		margin: 8px 0;
-    		font-size: 16px;
-	}
+body{
+    margin:0;
+}
 
-	a:hover {
-    		color: #0f5bd1;
-	}
+.container{
+    max-width:720px;
+    margin:0 auto;
+    padding:30px 16px;
+}
 
-	@media (max-width: 480px) {
-    		a {
-        		width: 100%;
-        		text-align: center;
-        		padding: 10px 12px;
-    		}
-	}
+h2{
+    font-size:24px;
+    font-weight:600;
+    text-align:center;
+    margin:0 0 24px;
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 16px 0;
-            border-radius: 8px;
-        }
+p{
+    margin:20px 0;
+    font-size:16px;
+}
 
-        b {
-            font-size: 18px;
-            display: block;
-            margin-bottom: 10px;
-        }
+a{
+    color:#1a73e8;
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:3px;
+}
 
-        br {
-            line-height: 1.8;
-        }
-    </style>
-	
-	<!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
+a:hover{
+    color:#0f5bd1;
+}
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+    margin:32px auto;
+    border-radius:8px;
+}
 
-        // =====================================================
-        // BASE GA4 INIT
-        // =====================================================
-        gtag('js', new Date());
+footer{
+    text-align:center;
+    margin-top:40px;
+    padding:20px 0;
+    font-size:13px;
+    color:#777;
+}
 
-        gtag('config', 'G-9VZK61L1DZ', {
-            send_page_view: true
-        });
+footer a{
+    color:#777;
+    text-decoration:none;
+    font-weight:400;
+}
 
+footer a:hover{
+    text-decoration:underline;
+}
 
-        // =====================================================
-        // OPTIONAL: CONSENT HOOK (future-proofing)
-        // =====================================================
-        function hasAnalyticsConsent() {
-            return true; // swap later for consent banner logic if needed
-        }
+</style>
 
-        // =====================================================
-        // CTA TRACKING
-        // =====================================================
-        document.addEventListener('click', (e) => {
-            const el = e.target.closest('[data-cta]');
-            if (!el) return;
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
 
-            if (!hasAnalyticsConsent()) return;
+<script>
 
-            gtag('event', 'select_content', {
-                content_type: 'cta',
-                item_id: el.dataset.cta,
-                section: el.dataset.section || 'unknown'
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config','G-9VZK61L1DZ',{
+    send_page_view:true
+});
+
+function hasAnalyticsConsent(){
+    return true;
+}
+
+document.addEventListener('click',(e)=>{
+
+    const el=e.target.closest('[data-cta]');
+    if(!el || !hasAnalyticsConsent()) return;
+
+    gtag('event','select_content',{
+        content_type:'cta',
+        item_id:el.dataset.cta,
+        section:el.dataset.section || 'unknown'
+    });
+
+});
+
+document.addEventListener('click',(e)=>{
+
+    const el=e.target.closest('a');
+
+    if(!el || !el.href) return;
+
+    try{
+
+        const url=new URL(el.href);
+
+        if(url.origin!==location.origin && hasAnalyticsConsent()){
+
+            gtag('event','click',{
+
+                event_category:'outbound',
+                link_url:el.href
+
             });
+
+        }
+
+    }catch{}
+
+});
+
+document.addEventListener('click',(e)=>{
+
+    const el=e.target.closest('a');
+
+    if(!el || !el.href || !hasAnalyticsConsent()) return;
+
+    const href=el.href.toLowerCase();
+
+    if(
+        href.includes('.exe') ||
+        href.includes('.zip') ||
+        href.includes('.pdf') ||
+        href.includes('download')
+    ){
+
+        gtag('event','file_download',{
+
+            file_name:href.split('/').pop(),
+            file_url:el.href,
+            transport_type:'beacon'
+
         });
 
+    }
 
-        // =====================================================
-        // OUTBOUND LINK TRACKING
-        // =====================================================
-        document.addEventListener('click', (e) => {
-            const el = e.target.closest('a');
-            if (!el || !el.href) return;
+});
 
-            try {
-                const url = new URL(el.href);
-                const isExternal = url.origin !== window.location.origin;
+</script>
 
-                if (isExternal && hasAnalyticsConsent()) {
-                    gtag('event', 'click', {
-                        event_category: 'outbound',
-                        link_url: el.href
-                    });
-                }
-            } catch (err) { }
-        });
-
-
-        // =====================================================
-        // SPECIAL TRACKING: DOWNLOADS / FILES
-        // =====================================================
-        document.addEventListener('click', (e) => {
-            const el = e.target.closest('a');
-            if (!el || !el.href) return;
-
-            if (!hasAnalyticsConsent()) return;
-
-            const href = el.href.toLowerCase();
-
-            if (
-                href.includes('.exe') ||
-                href.includes('.zip') ||
-                href.includes('.pdf') ||
-                href.includes('download')
-            ) {
-                gtag('event', 'file_download', {
-					file_name: href.split('/').pop(),
-					file_url: el.href,
-					transport_type: 'beacon'
-				});
-            }
-        });
-    </script>
 </head>
 
 <body>
-	<div class="container">
-		<p>
-			<b>Thanks for downloading ChessSpider! 4.2 for Windows x64.</b>
 
-			Please click
+<div class="container">
 
-			<a href="https://www.dropbox.com/scl/fi/93gj5bk3xqped5hj2iakd/chessspider_4.2.zip?rlkey=6g1zj5sfqt8j5x2hwv28mfncq&st=fjri3yy0&dl=1"
-			   data-cta="zip_download"
-			   data-section="download_page">
-			   Download ChessSpider
-			</a>
+<h2>Thanks for downloading ChessSpider! 4.2 for Windows x64.</h2>
 
-			After extracting the files, run the ChessSpider.exe file as seen below.
-		</p>
+<p>
+Please click
+<a href="https://www.dropbox.com/scl/fi/93gj5bk3xqped5hj2iakd/chessspider_4.2.zip?rlkey=6g1zj5sfqt8j5x2hwv28mfncq&st=fjri3yy0&dl=1"
+   data-cta="zip_download"
+   data-section="download_page">
+Download ChessSpider</a>.
+After extracting the files, run <strong>ChessSpider.exe</strong> as shown below.
+When the program asks whether you'd like to upgrade, simply click <strong>"No"</strong>. You'll then be able to use the 15-day trial immediately.
+</p>
 
-		<img src="images/runningchessspider!.png"
-			 alt="ChessSpider installation guide"
-			 title="ChessSpider!" />
+<img
+    src="images/runningchessspider!.png"
+    alt="ChessSpider installation guide"
+    title="ChessSpider">
 
-		<p>
-			After the 15-day trial expires, you can choose to purchase the unlimited version for €29.99. Kindly email <a href="mailto:chessbites@gmail.com">chessbites@gmail.com</a> and we'll get you set up.
-		</p>
-    </div>
-	
-	<footer style="text-align:center; margin-top:40px; padding:20px 0; font-size:13px; color:#777;">
-    © ChessBites · 
-    <a href="privacy.html" style="color:#777; text-decoration:none; padding:8px; font-weight:normal; font-size:13px;">
-        Privacy Policy
-    </a>
+<p>
+After the 15-day trial expires, you can upgrade to the unlimited version for
+<strong>€29.99</strong>.
+If you'd like to upgrade, email
+<a href="mailto:chessbites@gmail.com">chessbites@gmail.com</a>
+and we'll get you set up.
+</p>
+
+</div>
+
+<footer>
+© ChessBites ·
+<a href="privacy.html">Privacy Policy</a>
 </footer>
+
 </body>
 </html>
