@@ -2,201 +2,148 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<title>Download ChessSpider!</title>
+    <meta charset="utf-8">
+    <title>Download ChessSpider 4.2 – Chess Opening Repertoire Software</title>
 
-<link rel="shortcut icon" href="images/favicon.gif">
+    <link rel="shortcut icon" href="images/favicon.gif">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Download ChessSpider 4.2 for Windows x64. Start your 15-day free trial of chess opening repertoire management software.">
 
-<style>
+    <!-- Google Analytics -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
 
-html{
-    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
-    background:#fff;
-    color:#222;
-    line-height:1.6;
-}
+    <script defer src="analytics.js"></script>
 
-body{
-    margin:0;
-}
+    <style>
 
-.container{
-    max-width:720px;
-    margin:0 auto;
-    padding:30px 16px;
-}
-
-h2{
-    font-size:24px;
-    font-weight:600;
-    text-align:center;
-    margin:0 0 24px;
-}
-
-p{
-    margin:20px 0;
-    font-size:16px;
-}
-
-a{
-    color:#1a73e8;
-    font-weight:600;
-    text-decoration:underline;
-    text-underline-offset:3px;
-}
-
-a:hover{
-    color:#0f5bd1;
-}
-
-img{
-    display:block;
-    max-width:100%;
-    height:auto;
-    margin:32px auto;
-    border-radius:8px;
-}
-
-footer{
-    text-align:center;
-    margin-top:40px;
-    padding:20px 0;
-    font-size:13px;
-    color:#777;
-}
-
-footer a{
-    color:#777;
-    text-decoration:none;
-    font-weight:400;
-}
-
-footer a:hover{
-    text-decoration:underline;
-}
-
-</style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
-
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){dataLayer.push(arguments);}
-
-gtag('js', new Date());
-
-gtag('config','G-9VZK61L1DZ',{
-    send_page_view:true
-});
-
-function hasAnalyticsConsent(){
-    return true;
-}
-
-document.addEventListener('click',(e)=>{
-
-    const el=e.target.closest('[data-cta]');
-    if(!el || !hasAnalyticsConsent()) return;
-
-    gtag('event','select_content',{
-        content_type:'cta',
-        item_id:el.dataset.cta,
-        section:el.dataset.section || 'unknown'
-    });
-
-});
-
-document.addEventListener('click',(e)=>{
-
-    const el=e.target.closest('a');
-
-    if(!el || !el.href) return;
-
-    try{
-
-        const url=new URL(el.href);
-
-        if(url.origin!==location.origin && hasAnalyticsConsent()){
-
-            gtag('event','click',{
-
-                event_category:'outbound',
-                link_url:el.href
-
-            });
-
+        html {
+            font-family: Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
         }
 
-    }catch{}
+        body {
+            margin: 0;
+        }
 
-});
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 30px 16px;
+        }
 
-document.addEventListener('click',(e)=>{
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 0 24px;
+        }
 
-    const el=e.target.closest('a');
+        p {
+            margin: 20px 0;
+            font-size: 16px;
+        }
 
-    if(!el || !el.href || !hasAnalyticsConsent()) return;
+        a {
+            color: #1a73e8;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
-    const href=el.href.toLowerCase();
+            a:hover {
+                color: #0f5bd1;
+            }
 
-    if(
-        href.includes('.exe') ||
-        href.includes('.zip') ||
-        href.includes('.pdf') ||
-        href.includes('download')
-    ){
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 32px auto;
+            border-radius: 8px;
+        }
 
-        gtag('event','file_download',{
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 13px;
+            color: #777;
+        }
 
-            file_name:href.split('/').pop(),
-            file_url:el.href,
-            transport_type:'beacon'
+            footer a {
+                color: #777;
+                text-decoration: none;
+                font-weight: 400;
+            }
 
-        });
+                footer a:hover {
+                    text-decoration: underline;
+                }
 
-    }
+        .download-button {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+        }
 
-});
-
-</script>
+            .download-button:hover {
+                background: #0f5bd1;
+                color: white;
+            }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h2>Thanks for downloading ChessSpider! 4.2 for Windows x64.</h2>
+        <h2>Download ChessSpider 4.2 for Windows x64</h2>
 
-<p>
-Please click
-<a href="https://www.dropbox.com/scl/fi/93gj5bk3xqped5hj2iakd/chessspider_4.2.zip?rlkey=6g1zj5sfqt8j5x2hwv28mfncq&st=fjri3yy0&dl=1"
-   data-cta="zip_download"
-   data-section="download_page">
-Download ChessSpider</a>.
-After extracting the files, run <strong>ChessSpider.exe</strong> as shown below.
-When the program asks whether you'd like to upgrade, simply click <strong>"No"</strong>. You'll then be able to use the 15-day trial immediately.
-</p>
+        <p>
+            Click the button below to download ChessSpider 4.2 for Windows x64.
+        </p>
 
-<img
-    src="images/runningchessspider!.png"
-    alt="ChessSpider installation guide"
-    title="ChessSpider">
+        <p style="text-align:center;">
+            <a class="download-button"
+               href="https://www.dropbox.com/scl/fi/93gj5bk3xqped5hj2iakd/chessspider_4.2.zip?rlkey=6g1zj5sfqt8j5x2hwv28mfncq&st=fjri3yy0&dl=1"
+               data-cta="zip_download"
+               data-section="download_page">
+                Download ChessSpider
+            </a>
+        </p>
 
-<p>
-After the 15-day trial expires, you can upgrade to the unlimited version for
-<strong>€29.99</strong>.
-If you'd like to upgrade, email
-<a href="mailto:chessbites@gmail.com">chessbites@gmail.com</a>
-and we'll get you set up.
-</p>
+        <p style="text-align:center; font-size:14px; color:#666;">
+            No registration required. The download includes a fully functional 15-day free trial.
+        </p>
 
-</div>
+        <p>
+            After extracting the files, run <strong>ChessSpider.exe</strong> as shown below.
+            When prompted to upgrade, click <strong>"No"</strong> to continue with the fully functional 15-day trial.
+        </p>
+
+        <img src="images/runningchessspider!.png"
+             alt="Running ChessSpider after installation on Windows"
+             title="ChessSpider">
+
+        <p>
+            After the 15-day trial, you can continue using ChessSpider by upgrading to the unlimited version for
+            <strong>€29.99</strong>.
+            To upgrade, email
+            <a href="mailto:chessbites@gmail.com">chessbites@gmail.com</a>
+            and we'll get you set up.
+        </p>
+
+    </div>
 
 <footer>
 © ChessBites ·
