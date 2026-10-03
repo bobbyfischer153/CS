@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -99,6 +99,24 @@
                 background: #0f5bd1;
                 color: white;
             }
+
+        .security-note {
+            margin: 24px 0;
+            padding: 16px 20px;
+            border: 1px solid #e6c46a;
+            border-left: 4px solid #c58a00;
+            border-radius: 6px;
+            background: #fff9e8;
+        }
+
+        .security-note h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .security-note p {
+            margin: 8px 0;
+        }
     </style>
 
 </head>
@@ -123,13 +141,23 @@
         </p>
 
         <p style="text-align:center; font-size:14px; color:#666;">
-            No registration required. The download includes a fully functional 15-day free trial.
+            No registration required. The download is a fully functional 15-day free trial.
         </p>
 
         <p>
             After extracting the files, run <strong>ChessSpider.exe</strong> as shown below.
             When prompted to upgrade, click <strong>"No"</strong> to continue with the fully functional 15-day trial.
         </p>
+
+        <aside class="security-note" role="note" aria-labelledby="security-note-title">
+            <h3 id="security-note-title">Windows may show an “Unknown publisher” warning</h3>
+            <p>
+                ChessSpider isn’t signed with a Windows publisher certificate yet — this is common for independent software — so Windows may display a SmartScreen or User Account Control prompt.
+            </p>
+            <p>
+                If you downloaded it from this official page, simply choose <strong>More info</strong> → <strong>Run anyway</strong>, then click <strong>Yes</strong> when prompted.
+            </p>
+        </aside>
 
         <img src="images/runningchessspider!.png"
              alt="Running ChessSpider after installation on Windows"
