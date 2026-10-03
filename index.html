@@ -1,1168 +1,140 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-
-    <link rel="shortcut icon" href="images/favicon.gif">
-
-
-    <!-- Primary SEO -->
-
-    <title>
-        Chess Opening Repertoire Software – Manage Your Chess Preparation with ChessSpider
-    </title>
-
-
-    <meta name="description"
-          content="ChessSpider is chess opening repertoire software that helps players build, manage, and update their opening preparation using millions of master games and powerful PGN database tools.">
-
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-
-
-    <link rel="canonical"
-          href="https://www.chessbites.com/">
-
-
-
-    <!-- Open Graph -->
-
-    <meta property="og:type"
-          content="website">
-
-
-    <meta property="og:title"
-          content="Chess Opening Repertoire Software – ChessSpider">
-
-
-    <meta property="og:description"
-          content="Build your chess opening repertoire, search master games, and stay up to date with modern opening theory.">
-
-
-    <meta property="og:image"
-          content="https://www.chessbites.com/images/chessspider!_4.2.jpg">
-
-
-    <meta property="og:url"
-          content="https://www.chessbites.com/">
-
-
-
-    <!-- Twitter / X -->
-
-    <meta name="twitter:card"
-          content="summary_large_image">
-
-
-    <meta name="twitter:title"
-          content="Chess Opening Repertoire Software – ChessSpider">
-
-
-    <meta name="twitter:description"
-          content="Manage your chess openings and improve your preparation with a powerful repertoire and PGN database manager.">
-
-
-    <meta name="twitter:image"
-          content="https://www.chessbites.com/images/chessspider!_4.2.jpg">
-
-
-
-
-    <!-- Software structured data -->
-
-    <script type="application/ld+json">
-
-        {
-         "@context":"https://schema.org",
-         "@type":"SoftwareApplication",
-         "name":"ChessSpider",
-         "applicationCategory":"GameApplication",
-         "operatingSystem":"Windows",
-         "description":"Chess opening repertoire management software that helps players build, manage and update opening preparation using master games and PGN databases.",
-         "offers":{
-           "@type":"Offer",
-           "price":"0",
-           "priceCurrency":"USD"
-         },
-         "url":"https://www.chessbites.com/"
-        }
-
-    </script>
-
-
-
-
-
-    <style>
-
-
-        :root {
-            --primary: #1a73e8;
-            --dark: #222;
-            --light: #f7f9fc;
-            --border: #e2e5ea;
-            --text: #333;
-        }
-
-
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-
-
-        h1,
-        h2,
-        h3 {
-            color: var(--dark);
-            line-height: 1.25;
-        }
-
-
-
-        h1 {
-            font-size: clamp(2.2rem,5vw,3.5rem);
-            margin-bottom: 20px;
-        }
-
-
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-        }
-
-
-
-        p {
-            font-size: 1.05rem;
-        }
-
-
-
-        .center {
-            text-align: center;
-        }
-
-
-
-
-        /* HERO */
-
-
-        .hero {
-            padding: 70px 0;
-        }
-
-
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-
-
-        @media(min-width:900px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-
-
-
-        .hero-text p {
-            font-size: 1.2rem;
-            max-width: 600px;
-        }
-
-
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,.15);
-        }
-
-
-
-
-
-        /* BUTTONS */
-
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 13px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: .2s;
-        }
-
-
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-
-
-            .btn-primary:hover {
-                transform: translateY(-2px);
-            }
-
-
-
-        .btn-secondary {
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-
-
-
-
-
-        /* SECTIONS */
-
-
-        section {
-            padding: 45px 0;
-        }
-
-
-
-        .section-light {
-            background: var(--light);
-        }
-
-
-
-
-
-        /* FEATURES */
-
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-
-
-        @media(min-width:800px) {
-
-            .features {
-                grid-template-columns: repeat(3,1fr);
-            }
-        }
-
-
-
-        .card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
-            height: 100%;
-        }
-
-
-
-            .card h3 {
-                margin-top: 0;
-            }
-
-
-
-
-        /* HOW */
-
-
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-
-
-        @media(min-width:900px) {
-
-            .steps {
-                grid-template-columns: repeat(4,1fr);
-            }
-        }
-
-
-
-        .step {
-            padding: 20px;
-        }
-
-
-
-        .step-icon {
-            font-size: 2rem;
-        }
-
-
-
-        /* CTA */
-
-
-        .cta {
-            background: #111;
-            color: white;
-            text-align: center;
-            border-radius: 15px;
-            padding: 50px 25px;
-        }
-
-
-
-            .cta h2 {
-                color: white;
-            }
-
-
-
-
-
-        /* FOOTER */
-
-
-        footer {
-            padding: 30px 0;
-            text-align: center;
-            color: #777;
-            font-size: .9rem;
-        }
-
-
-
-
-
-        /* MOBILE FIXED CTA */
-
-
-        .mobile-cta {
-            display: none;
-        }
-
-
-
-        @media(max-width:600px) {
-
-
-            .mobile-cta {
-                display: block;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: white;
-                border-top: 1px solid var(--border);
-                padding: 12px;
-                text-align: center;
-                z-index: 1000;
-            }
-
-
-                .mobile-cta a {
-                    width: 90%;
-                }
-
-
-            body {
-                padding-bottom: 75px;
-            }
-        }
-    </style>
-
-
-
-    <!-- Google Analytics -->
-
-    <script async
-            src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ">
-    </script>
-
-
-    <script defer src="analytics.js"></script>
-
-
+<meta charset="utf-8">
+<link rel="shortcut icon" href="images/favicon.gif">
+<title>Chess Opening Repertoire Software | ChessSpider!</title>
+<meta name="description" content="ChessSpider! is Windows chess opening repertoire software for building and researching your own White and Black repertoires using PGN game collections. 15-day free trial.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://www.chessbites.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chess Opening Repertoire Software | ChessSpider!">
+<meta property="og:description" content="Build your own opening repertoire and find relevant games in your PGN collections. ChessSpider! helps you research and keep your opening preparation up to date.">
+<meta property="og:image" content="https://www.chessbites.com/images/chessspider!_4.3.jpg">
+<meta property="og:url" content="https://www.chessbites.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chess Opening Repertoire Software | ChessSpider!">
+<meta name="twitter:description" content="Build your own opening repertoire and find relevant games in your PGN collections with ChessSpider!. 15-day free trial.">
+<meta name="twitter:image" content="https://www.chessbites.com/images/chessspider!_4.3.jpg">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"ChessSpider!",
+  "applicationCategory":"GameApplication",
+  "operatingSystem":"Windows",
+  "description":"Windows chess opening repertoire software for building and researching personal White and Black repertoires using PGN game collections.",
+  "offers":{"@type":"Offer","price":"29.99","priceCurrency":"EUR"},
+  "url":"https://www.chessbites.com/"
+}
+</script>
+<style>
+:root{--primary:#1a73e8;--dark:#222;--light:#f7f9fc;--border:#e2e5ea;--text:#333}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}.container{width:100%;max-width:1200px;margin:auto;padding:0 20px}h1,h2,h3{color:var(--dark);line-height:1.25}h1{font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:20px}h2{font-size:2rem;margin-bottom:25px}p{font-size:1.05rem}.center{text-align:center}.hero{padding:70px 0}.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}@media(min-width:900px){.hero-grid{grid-template-columns:1fr 1fr}}.hero-text p{font-size:1.2rem;max-width:600px}.hero-image img{width:100%;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.15)}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:bold;transition:.2s}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{transform:translateY(-2px)}.btn-secondary{border:1px solid var(--primary);color:var(--primary)}section{padding:45px 0}.section-light{background:var(--light)}.features{display:grid;grid-template-columns:1fr;gap:20px}@media(min-width:800px){.features{grid-template-columns:repeat(3,1fr)}}.card{background:white;border:1px solid var(--border);border-radius:12px;padding:25px;height:100%}.card h3{margin-top:0}.steps{display:grid;grid-template-columns:1fr;gap:20px}@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}.step{padding:20px}.step-icon{font-size:2rem}.cta{background:#111;color:white;text-align:center;border-radius:15px;padding:50px 25px}.cta h2{color:white}footer{padding:30px 0;text-align:center;color:#777;font-size:.9rem}.mobile-cta{display:none}@media(max-width:600px){.mobile-cta{display:block;position:fixed;bottom:0;left:0;width:100%;background:white;border-top:1px solid var(--border);padding:12px;text-align:center;z-index:1000}.mobile-cta a{width:90%}body{padding-bottom:75px}}
+</style>
+<style>
+.section-light{padding:45px 28px;border-radius:12px}
+.trial-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px;max-width:600px}
+.trial-card{padding:16px;background:var(--light);border:1px solid var(--border);border-radius:10px}
+.trial-card strong{display:block;line-height:1.3}
+.trial-heading{font-size:1.05rem;color:var(--dark)}
+.trial-price{font-size:1.5rem;color:var(--dark)}
+.trial-card p{font-size:.92rem;line-height:1.45;margin:8px 0 0}
+@media(max-width:600px){.section-light{padding:32px 20px}.trial-details{grid-template-columns:1fr}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZK61L1DZ"></script>
+<script defer src="analytics.js"></script>
 </head>
-
-
 <body>
-
-
-    <div class="container">
-
-
-
-        <main>
-
-
-
-            <!-- HERO -->
-
-            <section class="hero">
-
-
-                <div class="hero-grid">
-
-
-                    <div class="hero-text">
-
-
-                        <h1>
-                            Chess Opening Repertoire Software for Serious Players
-                        </h1>
-
-
-
-                        <p>
-                            Build, manage, and update your chess opening repertoire using any PGN game
-                            collection, including millions of master games. ChessSpider helps you find
-                            relevant positions, discover new ideas, follow opening developments, and
-                            prepare with confidence.
-                        </p>
-
-
-
-                        <div class="buttons">
-
-
-                            <a class="btn btn-primary"
-                               href="download.html"
-                               data-cta="download"
-                               data-section="hero">
-
-                                Download ChessSpider
-
-                            </a>
-
-
-
-                            <a class="btn btn-secondary"
-                               href="https://youtu.be/gMkpugHk3KY"
-                               target="_blank"
-                               rel="noopener"
-                               data-cta="demo"
-                               data-section="hero">
-
-                                Watch Demo
-
-                            </a>
-
-
-
-                            <a class="btn btn-secondary"
-                               href="help/chessspider!.pdf"
-                               target="_blank"
-                               rel="noopener">
-
-                                PDF Manual
-
-                            </a>
-
-
-                        </div>
-
-
-
-                        <p style="font-size:.9rem;color:#666;margin-top:20px">
-
-                            15-day fully functional free trial.
-                            No registration. No credit card required.
-
-                        </p>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="hero-image">
-
-
-                        <img src="images/chessspider!_4.2.jpg"
-                             alt="ChessSpider chess opening repertoire software screenshot"
-                             loading="lazy">
-
-
-                    </div>
-
-
-
-                </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-            <!-- PROBLEM / SOLUTION -->
-
-
-            <section class="section-light">
-
-
-                <h2 class="center">
-
-                    Keep Your Opening Knowledge Up To Date
-
-                </h2>
-
-
-
-                <p>
-
-                    Chess openings are constantly evolving. Every week, thousands of new games
-                    are played, creating new ideas, improvements, and theoretical changes.
-
-                </p>
-
-
-
-                <p>
-
-                    Searching through large databases manually is slow and inefficient.
-                    ChessSpider solves this problem by comparing your personal opening repertoire
-                    against master games and showing you the positions that matter.
-
-                </p>
-
-
-
-                <p>
-
-                    Instead of studying random games, focus your preparation on the openings
-                    you actually play.
-
-                </p>
-
-
-
-            </section>
-
-
-
-
-
-
-
-
-            <!-- FEATURES -->
-
-
-            <section>
-
-
-                <h2 class="center">
-
-                    Everything You Need For Opening Preparation
-
-                </h2>
-
-
-
-                <div class="features">
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            ♟ Personal Opening Repertoire
-                        </h3>
-
-                        <p>
-
-                            Create and maintain your White and Black opening systems. Build different
-                            repertoires for different opponents, tournaments, or playing styles.
-
-                        </p>
-
-                    </div>
-
-
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            🔍 Powerful PGN Searching
-                        </h3>
-
-                        <p>
-
-                            Search large chess databases by player, event, position, variation, or
-                            endgame type. Quickly find the games relevant to your preparation.
-
-                        </p>
-
-                    </div>
-
-
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            📚 Master Game Database
-                        </h3>
-
-                        <p>
-
-                            Study games from strong players and discover how your openings are played
-                            in real tournament practice.
-
-                        </p>
-
-                    </div>
-
-
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            ⚡ Repertoire Updates
-                        </h3>
-
-                        <p>
-
-                            Stay up to date with modern chess theory by filtering new PGN collections
-                            for games and developments that affect your opening repertoire.
-
-                        </p>
-
-                    </div>
-
-
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            💡 Find New Ideas
-                        </h3>
-
-                        <p>
-
-                            Discover improvements, novelties, and critical positions that can strengthen
-                            your opening preparation.
-
-                        </p>
-
-                    </div>
-
-
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            📂 Annotated PGN Support
-                        </h3>
-
-                        <p>
-
-                            Work with both simple game collections and deeply analysed PGN files
-                            containing comments and variations.
-
-                        </p>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-            <!-- HOW IT WORKS -->
-
-
-            <section class="section-light">
-
-
-                <h2 class="center">
-
-                    How ChessSpider Works
-
-                </h2>
-
-
-                <div class="steps">
-
-
-                    <div class="step">
-
-                        <div class="step-icon">
-                            📂
-                        </div>
-
-                        <h3>
-                            Create Your Repertoire
-                        </h3>
-
-                        <p>
-
-                            Add your opening positions and build your personal White and Black systems.
-
-                        </p>
-
-                    </div>
-
-
-
-
-                    <div class="step">
-
-                        <div class="step-icon">
-                            🔎
-                        </div>
-
-                        <h3>
-                            Search Master Games
-                        </h3>
-
-                        <p>
-
-                            ChessSpider scans large PGN collections for games matching your repertoire.
-
-                        </p>
-
-                    </div>
-
-
-
-
-                    <div class="step">
-
-                        <div class="step-icon">
-                            💡
-                        </div>
-
-                        <h3>
-                            Discover Developments
-                        </h3>
-
-                        <p>
-
-                            Find new ideas, improvements, and changes in modern opening theory.
-
-                        </p>
-
-                    </div>
-
-
-
-
-                    <div class="step">
-
-                        <div class="step-icon">
-                            🚀
-                        </div>
-
-                        <h3>
-                            Improve Preparation
-                        </h3>
-
-                        <p>
-
-                            Update your opening files and approach your games better prepared.
-
-                        </p>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </section>
-
-
-
-
-
-
-
-
-            <!-- WHO IS IT FOR -->
-            <!-- WHO USES CHESSSPIDER -->
-
-            <section>
-
-                <h2 class="center">
-                    Who Uses ChessSpider?
-                </h2>
-
-
-                <div class="features">
-
-
-                    <div class="card">
-
-                        <h3>
-                            Tournament Players
-                        </h3>
-
-                        <p>
-                            Prepare serious opening systems and keep track of modern theoretical
-                            developments.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            Club Players
-                        </h3>
-
-                        <p>
-                            Build a structured opening library and improve your understanding of the
-                            positions you actually play.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            Chess Coaches & Analysts
-                        </h3>
-
-                        <p>
-                            Organise databases and create focused material for training and analysis.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-
-
-
-
-            <!-- FREQUENTLY ASKED QUESTIONS -->
-
-            <section class="section-light">
-
-                <h2 class="center">
-                    Frequently Asked Questions
-                </h2>
-
-
-                <div class="features">
-
-
-                    <div class="card">
-
-                        <h3>
-                            Does ChessSpider work with PGN files?
-                        </h3>
-
-                        <p>
-                            Yes. ChessSpider can open and search valid PGN databases,
-                            including annotated games and variations, making it easy to
-                            analyse large collections of chess games.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            Can I manage both White and Black repertoires?
-                        </h3>
-
-                        <p>
-                            Yes. ChessSpider allows you to create and maintain separate
-                            opening repertoires for White, Black, or different playing
-                            styles.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            Does ChessSpider run on Windows?
-                        </h3>
-
-                        <p>
-                            Yes. ChessSpider is a Windows desktop application designed
-                            for chess opening preparation, repertoire management, and
-                            PGN database searching.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            Is there a free trial?
-                        </h3>
-
-                        <p>
-                            Yes. ChessSpider includes a fully functional 15-day free trial
-                            with no registration and no credit card required.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="card">
-
-                        <h3>
-                            How does ChessSpider keep my repertoire updated?
-                        </h3>
-
-                        <p>
-                            ChessSpider filters large PGN game collections for positions from your
-                            opening repertoire, making it easier to find recent developments,
-                            improvements, and important theoretical ideas from master games.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-
-
-
-
-
-
-
-            <!-- FINAL CTA -->
-
-
-            <section>
-
-
-                <div class="cta">
-
-
-                    <h2>
-
-                        Build Your Opening Advantage
-
-                    </h2>
-
-
-
-                    <p>
-
-                        Start your free 15-day trial and turn millions of master games into your
-                        own personal chess preparation library.
-
-                    </p>
-
-
-
-                    <a class="btn btn-primary"
-                       href="download.html"
-                       data-cta="download"
-                       data-section="footer">
-
-                        Download ChessSpider
-
-                    </a>
-
-
-                </div>
-
-
-            </section>
-
-
-
-
-
-
-
-            <!-- SOCIAL -->
-
-
-            <section>
-
-
-                <div class="buttons"
-                     style="justify-content:center">
-
-
-                    <a class="btn btn-secondary"
-                       href="#"
-                       id="shareButton">
-
-                        🔗 Share ChessSpider
-
-                    </a>
-
-
-
-                    <a class="btn btn-secondary"
-                       href="https://x.com/chessbites"
-                       target="_blank"
-                       rel="noopener">
-
-                        𝕏 Follow on X
-
-                    </a>
-
-
-
-                    <a class="btn btn-secondary"
-                       href="https://www.facebook.com/profile.php?id=61571621702995"
-                       target="_blank"
-                       rel="noopener">
-
-                        👍 Facebook
-
-                    </a>
-
-
-
-                </div>
-
-
-            </section>
-
-
-
-        </main>
-
-
-
-
-
-        <!-- MOBILE DOWNLOAD BUTTON -->
-
-
-        <div class="mobile-cta">
-
-            <a class="btn btn-primary"
-               href="download.html">
-
-                Download ChessSpider
-
-            </a>
-
-        </div>
-
-
-
-
-
-        <footer>
-
-            © ChessBites ·
-
-            <a href="privacy.html">
-
-                Privacy Policy
-
-            </a>
-
-
-        </footer>
-
-
-
-
-    </div>
-
-
+<div class="container">
+<main>
+<section class="hero">
+<div class="hero-grid">
+<div class="hero-text">
+<h1>Explore Your Opening Repertoire</h1>
+<p>Find and investigate the games that matter to the positions you actually play.</p>
+<p>ChessSpider! connects your personal White and Black repertoires with your PGN game collections, making it easy to find relevant games and investigate developments in your openings.</p>
+<div class="buttons">
+<a class="btn btn-primary" href="download.html" data-cta="download" data-section="hero">Download ChessSpider!</a>
+<a class="btn btn-secondary" href="https://youtu.be/gMkpugHk3KY" target="_blank" rel="noopener" data-cta="demo" data-section="hero">Watch Demo</a>
+<a class="btn btn-secondary" href="help/chessspider!.pdf" target="_blank" rel="noopener">PDF Manual</a>
+</div>
+<div class="trial-details">
+<div class="trial-card">
+<strong class="trial-heading">15-day free trial</strong>
+<p>Fully functional. No registration or credit card required.</p>
+</div>
+<div class="trial-card">
+<strong class="trial-price">€29.99</strong>
+<p>For the unlimited version. After the trial, purchase is optional—there's no automatic charge.</p>
+</div>
+</div>
+</div>
+<div class="hero-image"><img src="images/chessspider!_4.3.jpg" alt="ChessSpider! chess opening repertoire software" fetchpriority="high"></div>
+</div>
+</section>
+<section class="section-light">
+<h2 class="center">Focus on the Games That Matter to Your Repertoire</h2>
+<p>Your opening repertoire contains the positions and variations that are relevant to your own chess. But a PGN collection may contain thousands of games, many of which have nothing to do with the openings you play.</p>
+<p>ChessSpider! lets you connect your repertoire to your PGN collections and find the games that contain positions from your repertoire.</p>
+<p>You can then investigate those games, examine the variations and keep your opening preparation informed by actual games from the collection.</p>
+</section>
+<section>
+<h2 class="center">What ChessSpider! Does</h2>
+<div class="features">
+<div class="card"><h3>♟ Your Own Repertoire</h3><p>Create and maintain your own White and Black opening repertoires, based on the positions and variations you actually play.</p></div>
+<div class="card"><h3>🔎 Find Relevant Games</h3><p>Search your PGN collections for games containing positions from your repertoire, so you can focus on the games relevant to your opening preparation.</p></div>
+<div class="card"><h3>📂 Work With Your PGNs</h3><p>Use your own PGN collections, whether they contain tournament games, master games, historical games or analysed games.</p></div>
+<div class="card"><h3>⚡ Keep Up With Developments</h3><p>Add new PGN collections and see which games contain positions from your repertoire, helping you analyse developments in the openings you play.</p></div>
+<div class="card"><h3>💡 Investigate New Ideas</h3><p>Examine relevant games and variations to discover ideas, improvements and critical positions worth investigating.</p></div>
+<div class="card"><h3>📝 Annotated PGN Support</h3><p>Work with PGN files containing comments and variations as well as standard game collections.</p></div>
+</div>
+</section>
+<section class="section-light">
+<h2 class="center">How ChessSpider! Works</h2>
+<div class="steps">
+<div class="step"><div class="step-icon">♟</div><h3>Build Your Repertoire</h3><p>Add the positions and variations that make up your personal White and Black opening repertoires.</p></div>
+<div class="step"><div class="step-icon">📂</div><h3>Add a PGN Collection</h3><p>Open the PGN collection you want to investigate — whether it contains recent games, tournament games or historical games.</p></div>
+<div class="step"><div class="step-icon">🔎</div><h3>Find Relevant Games</h3><p>ChessSpider! identifies games containing positions from your repertoire.</p></div>
+<div class="step"><div class="step-icon">💡</div><h3>Investigate &amp; Prepare</h3><p>Examine the resulting games and variations and use what you discover to inform your opening preparation.</p></div>
+</div>
+</section>
+<section>
+<h2 class="center">Built for Players Who Take Their Openings Seriously</h2>
+<div class="features">
+<div class="card"><h3>Tournament Players</h3><p>Investigate the openings you actually play and keep your preparation informed by recent games.</p></div>
+<div class="card"><h3>Serious Club Players</h3><p>Build structured White and Black repertoires and explore relevant games from your own PGN collections.</p></div>
+<div class="card"><h3>Coaches &amp; Analysts</h3><p>Search and organise PGN collections around specific opening positions for preparation, research and training.</p></div>
+</div>
+</section>
+<section class="section-light">
+<h2 class="center">Frequently Asked Questions</h2>
+<div class="features">
+<div class="card"><h3>Does ChessSpider! work with PGN files?</h3><p>Yes. ChessSpider! can open and search valid PGN databases, including annotated games and variations, making it easy to investigate collections of chess games.</p></div>
+<div class="card"><h3>Can I manage both White and Black repertoires?</h3><p>Yes. ChessSpider! allows you to create and maintain separate opening repertoires for White, Black, or different playing styles.</p></div>
+<div class="card"><h3>Does ChessSpider! run on Windows?</h3><p>Yes. ChessSpider! is a Windows desktop application designed for chess opening preparation, repertoire management, and PGN database searching.</p></div>
+<div class="card"><h3>Is there a free trial?</h3><p>Yes. ChessSpider! includes a fully functional 15-day free trial with no registration and no credit card required.</p></div>
+<div class="card"><h3>How can I keep my repertoire up to date?</h3><p>Add new PGN game collections and use your repertoire positions to find relevant games. You can then investigate recent games, developments and important theoretical ideas in the openings you play.</p></div>
+</div>
+</section>
+<section>
+<div class="cta">
+<h2>Explore Your Opening Repertoire</h2>
+<p>Try ChessSpider! free for 15 days and discover a more focused way to research the openings you actually play.</p>
+<p><strong>€29.99 · No subscription · No credit card required</strong></p>
+<a class="btn btn-primary" href="download.html" data-cta="download" data-section="footer">Download ChessSpider!</a>
+</div>
+</section>
+<section>
+<div class="buttons" style="justify-content:center">
+<a class="btn btn-secondary" href="#" id="shareButton">🔗 Share ChessSpider!</a>
+<a class="btn btn-secondary" href="https://x.com/chessbites" target="_blank" rel="noopener">𝕏 Follow on X</a>
+<a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=61571621702995" target="_blank" rel="noopener">👍 Facebook</a>
+</div>
+</section>
+</main>
+<div class="mobile-cta"><a class="btn btn-primary" href="download.html">Download ChessSpider!</a></div>
+<footer>© ChessBites · <a href="privacy.html">Privacy Policy</a></footer>
+</div>
 </body>
 </html>
